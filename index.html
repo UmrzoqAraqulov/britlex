@@ -5,51 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Britlex</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <div id="bactop">
+        <a href="#header">
+            <i class="fa-solid fa-circle-up"></i>
+        </a>
+    </div>
     <div class="container">
-        <header>
-            <div class="nav">
-                <div class="nav-logo">
-                    <a href="index.html">
-                        <img src="assets/media/nav_logo.png" alt="logo">
-                    </a>
-                </div>
-                <input type="checkbox" id="check">
-                <div class="nav-menu">
-                    <ul class="nav-menu-items">
-                        <li class="nav-menu-item">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="nav-menu-item">
-                            <a href="#">Skills</a>
-                        </li>
-                        <li class="nav-menu-item">
-                            <a href="#">About Us</a>
-                        </li>
-                        <li class="nav-menu-item">
-                            <a href="#">Pricing</a>
-                        </li>
-                        <li class="nav-menu-item">
-                            <a href="#">Contacts</a>
-                        </li>
-                    </ul>
-                    <label for="check" class="close1">
-                        <i class="fa-solid fa-x"></i>
+        <header id="header">
+            <nav id="nav-shrink">
+                <div class="container">
+                    <div class="nav-logo">
+                        <a href="index.html">
+                            <img src="assets/media/nav_logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <input type="checkbox" id="check">
+                    <div class="nav-menu">
+                        <ul class="nav-menu-items">
+                            <li class="nav-menu-item">
+                                <a href="#header">Home</a>
+                            </li>
+                            <li class="nav-menu-item">
+                                <a href="#skills">Skills</a>
+                            </li>
+                            <li class="nav-menu-item">
+                                <a href="#about">About Us</a>
+                            </li>
+                            <li class="nav-menu-item">
+                                <a href="#pricing">Pricing</a>
+                            </li>
+                            <li class="nav-menu-item">
+                                <a href="#contact">Contacts</a>
+                            </li>
+                        </ul>
+                        <label for="check" class="close1">
+                            <i class="fa-solid fa-x"></i>
+                        </label>
+                    </div>
+                    <label for="check" class="open">
+                        <i class="fa-solid fa-bars"></i>
                     </label>
+                    <label for="check" class="close"></label>
+                    <div class="nav-kirish">
+                        <a href="#">Let’s Talk</a>
+                    </div>
                 </div>
-                <label for="check" class="open">
-                    <i class="fa-solid fa-bars"></i>
-                </label>
-                <label for="check" class="close"></label>
-                <div class="nav-kirish">
-                    <a href="#">Let’s Talk</a>
-                </div>
-            </div>
+            </nav>
             <div class="head">
                 <div class="head-left">
                     <h1>Learn <br>
@@ -75,7 +82,7 @@
             </div>
         </header>
         <main>
-            <section class="skils">
+            <section id="skills" class="skils">
                 <h2>Skills</h2>
                 <div class="skil">
                     <div class="skils-speak">
@@ -128,7 +135,7 @@
                     </div>
                 </div>
             </section>
-            <section class="about">
+            <section id="about" class="about">
                 <div class="about-left">
                     <h2>
                         About Us
@@ -155,7 +162,7 @@
                     <img src="assets/media/section2_img1.png" alt="">
                 </div>
             </section>
-            <section class="pricing">
+            <section id="pricing" class="pricing">
                 <h2>Pricing</h2>
                 <div class="pricing-elements">
                     <div class="pricing-element">
@@ -199,7 +206,7 @@
                 </div>
             </section>
         </main>
-        <footer>
+        <footer id="contact">
             <div class="top">
                 <div class="top-left">
                     <img src="assets/media/footer_img1.png" alt="img">
@@ -225,5 +232,9 @@
             </div>
         </footer>
     </div>
+
+
+
+    <script src="./app.js"></script>
 </body>
 </html>

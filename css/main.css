@@ -11,47 +11,78 @@
 .container {
   width: 80%;
   margin: 0 auto;
+  max-width: 1300px;
 }
 
-header .nav {
+#bactop {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: gray;
+  font-size: 40px;
+  display: none;
+  z-index: 999;
+}
+@media (max-width: 700px) {
+  #bactop {
+    font-size: 30px;
+  }
+}
+
+.show__backtop {
+  display: block !important;
+}
+
+header nav {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  background: white;
+  z-index: 9999;
+  padding: 20px 0px;
+}
+header nav .container {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0px;
   align-items: center;
 }
-header .nav-logo a img {
+header nav .container .nav-logo a img {
   width: 120px;
 }
-header .nav #check, header .nav .open, header .nav .close, header .nav .close1 {
+header nav .container #check,
+header nav .container .open,
+header nav .container .close,
+header nav .container .close1 {
   display: none;
 }
-header .nav-menu ul {
+header nav .container .nav-menu ul {
   display: flex;
   gap: 22px;
   align-items: center;
 }
-header .nav-menu ul li {
+header nav .container .nav-menu ul li {
   font-size: 18px;
 }
-header .nav-menu ul li a {
+header nav .container .nav-menu ul li a {
   padding: 3px 10px;
   border: 1.5px solid transparent;
   border-radius: 3px;
   transition: 0.5s;
 }
-header .nav-menu ul li a:hover {
+header nav .container .nav-menu ul li a:hover {
   color: white;
   background: black;
   box-shadow: 3px 4px rgb(82, 81, 81), 7px 7px 15px rgba(0, 0, 0, 0.541);
 }
-header .nav-kirish {
+header nav .container .nav-kirish {
   border: 2px solid black;
   padding: 8px 18px;
   border-radius: 3px;
   font-size: 17px;
   transition: 0.5s;
 }
-header .nav-kirish:hover {
+header nav .container .nav-kirish:hover {
   color: white;
   background: black;
   box-shadow: 3px 4px rgb(82, 81, 81), 7px 7px 15px rgba(0, 0, 0, 0.541);
@@ -60,7 +91,7 @@ header .head {
   height: calc(100vh - 80px);
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
+  margin-top: 80px;
   align-items: center;
 }
 header .head-left {
@@ -76,7 +107,7 @@ header .head-left h2 {
 header .head-left p {
   padding: 30px 0px;
   width: 70%;
-  color: #8F95A5;
+  color: #8f95a5;
   font-size: 18px;
 }
 header .head-left .button {
@@ -112,21 +143,31 @@ header .head-right {
 header .head-right img {
   width: 100%;
 }
+@media (min-width: 1440px) {
+  header .head {
+    height: 600px;
+  }
+}
+
+.show-nav__shrink {
+  box-shadow: 0px 0px 10px gray;
+  padding: 15px 0px !important;
+}
 
 @media (max-width: 920px) {
   .container {
     width: 86%;
   }
-  .container header .nav-logo a img {
+  .container header nav .nav-logo a img {
     width: 95px;
   }
-  .container header .nav-menu ul {
+  .container header nav .nav-menu ul {
     gap: 10px;
   }
-  .container header .nav-menu ul li {
+  .container header nav .nav-menu ul li {
     font-size: 16px;
   }
-  .container header .nav-kirish {
+  .container header nav .nav-kirish {
     font-size: 15px;
     padding: 5px 10px;
   }
@@ -161,20 +202,22 @@ header .head-right img {
   .container {
     width: 90%;
   }
-  .container header .nav .open {
+  .container header nav .open {
     display: block;
     font-size: 22px;
+    cursor: pointer;
   }
-  .container header .nav #check:checked ~ .nav-menu {
+  .container header nav #check:checked ~ .nav-menu {
     left: 0;
   }
-  .container header .nav #check:checked ~ .close {
+  .container header nav #check:checked ~ .close {
     right: 0;
   }
-  .container header .nav .close {
+  .container header nav .close {
     top: 0;
     right: -100%;
     display: block;
+    cursor: pointer;
     position: fixed;
     transition: 0.6s;
     width: 100%;
@@ -182,7 +225,7 @@ header .head-right img {
     background: rgba(0, 0, 0, 0.581);
     z-index: 5;
   }
-  .container header .nav-menu {
+  .container header nav .nav-menu {
     position: fixed;
     top: 0;
     left: -100%;
@@ -193,27 +236,31 @@ header .head-right img {
     z-index: 10;
     transition: 1s;
   }
-  .container header .nav-menu .close1 {
+  .container header nav .nav-menu .close1 {
     display: block;
     color: white;
     right: 30px;
     top: 20px;
+    cursor: pointer;
     position: absolute;
   }
-  .container header .nav-menu ul {
+  .container header nav .nav-menu .close1:hover {
+    opacity: 0.9;
+  }
+  .container header nav .nav-menu ul {
     height: 100%;
     flex-direction: column;
     align-items: center;
     padding-top: 60px;
     gap: 30px;
   }
-  .container header .nav-menu ul li {
+  .container header nav .nav-menu ul li {
     font-size: 20px;
   }
-  .container header .nav-menu ul li a:hover {
+  .container header nav .nav-menu ul li a:hover {
     box-shadow: 3px 3px red, 5px 5px 10px white;
   }
-  .container header .nav-kirish {
+  .container header nav .nav-kirish {
     display: none;
   }
   .container header .head {
@@ -259,10 +306,10 @@ header .head-right img {
   }
 }
 @media (max-width: 365px) {
-  .container header .nav .nav-logo img {
+  .container header nav .nav-logo img {
     width: 80px;
   }
-  .container header .nav ul li {
+  .container header nav ul li {
     font-size: 16px;
   }
   .container header .head .head-left h2 {
@@ -276,7 +323,7 @@ header .head-right img {
   }
 }
 @media (max-width: 170px) {
-  .container header .nav ul li {
+  .container header nav ul li {
     font-size: 13px;
   }
 }
@@ -790,6 +837,4 @@ footer .bottom {
   footer .bottom-logo {
     width: 80px;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
